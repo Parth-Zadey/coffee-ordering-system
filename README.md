@@ -6,7 +6,7 @@ The project started as a Python/Tkinter desktop coffee-ordering application and 
 
 ## 🌐 Live Demo
 
-**[View Live Website](#)**
+**[View Live Website](https://parth-zadey.github.io/coffee-ordering-system/)**
 
 
 ## 📸 Features
