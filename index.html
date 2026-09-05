@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bean | Coffee Ordering</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">☕</span>
+            <div>
+                <strong>BREW</strong>
+                <small>& BEAN</small>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+        </div>
+
+        <button class="nav-cart" onclick="scrollToOrder()">
+            <span>🛒</span>
+            <b id="navCartCount">0</b>
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                <span></span>
+                FRESHLY BREWED
+            </div>
+
+            <h1>
+                Your daily dose of
+                <em>good coffee.</em>
+            </h1>
+
+            <p>
+                Crafted with carefully selected beans, rich flavors,
+                and a little love in every cup.
+            </p>
+
+            <a href="#menu" class="hero-button">
+                Explore Menu
+                <span>↓</span>
+            </a>
+
+        </div>
+
+        <div class="hero-coffee">
+
+            <div class="steam steam-one"></div>
+            <div class="steam steam-two"></div>
+            <div class="steam steam-three"></div>
+
+            <div class="coffee-cup">
+
+                <div class="cup-coffee">
+                    <div class="coffee-swirl"></div>
+                </div>
+
+                <div class="cup-body"></div>
+
+                <div class="cup-handle"></div>
+
+                <div class="saucer"></div>
+
+            </div>
+
+            <div class="coffee-shadow"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">OUR SELECTION</span>
+
+                <h2>
+                    Find your perfect
+                    <em>cup.</em>
+                </h2>
+            </div>
+
+            <p>
+                From bold espresso shots to creamy
+                favorites — there's something for every mood.
+            </p>
+
+        </div>
+
+
+        <div class="menu-layout">
+
+            <!-- COFFEE MENU -->
+            <div class="coffee-grid" id="menuGrid"></div>
+
+
+            <!-- ORDER -->
+            <aside class="order-card" id="orderCard">
+
+                <div class="order-header">
+
+                    <div>
+                        <span class="eyebrow">YOUR CART</span>
+                        <h3>Your Order</h3>
+                    </div>
+
+                    <div class="cart-count" id="cartCount">
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="order-items" id="orderItems">
+
+                    <div class="empty-cart">
+
+                        <div class="empty-icon">☕</div>
+
+                        <h4>Your cart is empty</h4>
+
+                        <p>
+                            Choose something delicious
+                            from our menu.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-bottom">
+
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <strong id="totalPrice">$0.00</strong>
+                    </div>
+
+                    <div class="checkout-info">
+                        <span>✓</span>
+                        Ready in 5–10 minutes
+                    </div>
+
+                    <button
+                        class="checkout-button"
+                        id="checkoutButton"
+                        onclick="checkout()"
+                    >
+                        <span>Checkout</span>
+                        <span>→</span>
+                    </button>
+
+                    <button
+                        class="clear-button"
+                        onclick="clearOrder()"
+                    >
+                        Clear order
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <span class="eyebrow">THE BREW & BEAN</span>
+
+            <h2>
+                Coffee should be
+                <em>an experience.</em>
+            </h2>
+
+            <p>
+                We believe great coffee doesn't need to be complicated.
+                Just quality beans, thoughtful preparation and a place
+                where you can slow down for a moment.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <strong>8</strong>
+                <span>Signature Coffees</span>
+            </div>
+
+            <div>
+                <strong>5–10</strong>
+                <span>Minute Preparation</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Made With Care</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            ☕ BREW & BEAN
+        </div>
+
+        <p>
+            Crafted for coffee lovers.
+        </p>
+
+        <span>
+            © 2026 Brew & Bean
+        </span>
+
+    </footer>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModal">
+
+        <div class="checkout-modal">
+
+            <button
+                class="modal-close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="eyebrow">ORDER CONFIRMED</span>
+
+            <h2>
+                Thanks for your
+                <em>order!</em>
+            </h2>
+
+            <p>
+                Your coffee is being prepared.
+                It'll be ready in approximately 5–10 minutes.
+            </p>
+
+            <div class="modal-total">
+                <span>Total paid</span>
+                <strong id="modalTotal">$0.00</strong>
+            </div>
+
+            <button
+                class="modal-button"
+                onclick="closeModal()"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
